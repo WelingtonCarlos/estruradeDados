@@ -1,6 +1,6 @@
 def main():
     seq1 = [54, 2, 11, 4, 17, 7, 21, 1, 5, 37, 42, 13, 29]
-    seq2 = [54, 2, 11, 21, 1, 5, 37, 42, 13, 29]
+    seq2 = [54, 2, 55, 11, 21, 1, 5, 37, 42, 13, 29]
     seq3 = [54, 2, 11, 4, 17, 7, 21, 1, 99, 55, 67, 9, 71, 79, 89]
     seq4 = [721, 345, 901, 101, 21, 67, 7, 9, 4, 79]
     seq5 = [871, 888, 564, 764, 990, 76, 3, 1, 2, 5, 45, 89]
@@ -30,27 +30,28 @@ def main():
 
 # Ordenação pro Inserção
 def insercao(seq):
-    for p in range(0, len(seq)):
-        current_element = seq[p]
+    x = len(seq)
+    for p in range(1, x):
+        current_element = seq[p]  # posição atual
+        index = p - 1  # índice sendo uma posição a menos que o p
+        while index >= 0 and seq[index] > current_element:
+            seq[index + 1] = seq[index]
+            index = index - 1
 
-        while p > 0 and seq[p - 1] > current_element:
-            seq[p] = seq[p - 1]
-            p -= 1
-
-        seq[p] = current_element
+        seq[index + 1] = current_element
 
 # Ordenação por Seleção
 
 
 def selecao(seq):
-    for index in range(0, len(seq)):
-        min_index = index
+    x = len(seq)
+    for index in range(x-1):
+        min_index = index  # o menor índice da lista é na posição que o index estiver
 
-        for right in range(index + 1, len(seq)):
-            if seq[right] < seq[min_index]:
-                min_index = right
-
-        seq[index], seq[min_index] = seq[min_index], seq[index]
+        for right in range(index, x):
+            if seq[right] < seq[min_index]:  # se o elemento seguinte ao index for menor
+                # eles invertem de posição
+                seq[right], seq[min_index] = seq[min_index], seq[right]
 
 # Ordenação por Troca
 
@@ -139,6 +140,25 @@ def partition(seq, start, end):
     # e por último troca os valores do index com o J
     seq[i], seq[end] = seq[end], seq[i]
     return i
+
+
+def busca(lista, elem):
+    """Retorna o índice elem se ele estiver na lista ou None, caso contrário"""
+    for i in range(len(lista)):
+        if lista[i] == elem:
+            return i
+    return None
+
+
+lista_estranha = [8, "5", 32, 0, "python", 11]
+print(lista_estranha)
+print("digite um elemento pra ser buscado: ")
+elemento = input()
+indice = busca(lista_estranha, elemento)
+if indice is not None:
+    print("O índice do elemento {} é {}".format(elemento, indice))
+else:
+    print("O elemento {} não se encontra na lista".format(elemento))
 
 
 main()
