@@ -150,10 +150,9 @@ def busca(lista, elem):
     return None
 
 
-lista_estranha = [8, "5", 32, 0, "python", 11]
-print(lista_estranha)
-print("digite um elemento pra ser buscado: ")
-elemento = input()
+lista_estranha = [8, "5", 32, 0, "uema", 11]
+elemento = 11
+
 indice = busca(lista_estranha, elemento)
 if indice is not None:
     print("O índice do elemento {} é {}".format(elemento, indice))
