@@ -4,6 +4,7 @@ def main():
     seq3 = [54, 2, 11, 4, 17, 7, 21, 1, 99, 55, 67, 9, 71, 79, 89]
     seq4 = [721, 345, 901, 101, 21, 67, 7, 9, 4, 79]
     seq5 = [871, 888, 564, 764, 990, 76, 3, 1, 2, 5, 45, 89]
+    listamaluca = [8, "5", 32, 0, "uema", 11]
 
     print(seq1)
     print(seq2)
@@ -26,6 +27,15 @@ def main():
 
     quicksort(seq5)
     print("Ordenação Rápida: ", seq5)
+    print("")
+    print(listamaluca)
+    print(buscasequencial(listamaluca, 32))
+    print(buscasequencial(listamaluca, "uema"))
+    print(buscasequencial(listamaluca, 13))
+    print("")
+    print(buscabinaria((seq1), 7))
+    print(buscabinaria((seq4), 101))
+    print(buscabinaria((seq5), 7))
 
 
 # Ordenação pro Inserção
@@ -142,22 +152,30 @@ def partition(seq, start, end):
     return i
 
 
-def busca(lista, elem):
+def buscasequencial(lista, elem):
     """Retorna o índice elem se ele estiver na lista ou None, caso contrário"""
     for i in range(len(lista)):
         if lista[i] == elem:
-            return i
-    return None
+            return elem
+    return "Não encontrado"
 
 
-lista_estranha = [8, "5", 32, 0, "uema", 11]
-elemento = 11
+def buscabinaria(seq, elem):
+    quicksort(seq)
+    start = 0
+    end = len(seq)-1
 
-indice = busca(lista_estranha, elemento)
-if indice is not None:
-    print("O índice do elemento {} é {}".format(elemento, indice))
-else:
-    print("O elemento {} não se encontra na lista".format(elemento))
+    while start <= end:
+        middle = (start + end)//2
+
+        if seq[middle] < elem:
+            start = middle + 1
+        elif seq[middle] > elem:
+            end = middle - 1
+        else:
+            return elem
+
+    return 'Elemento não encontrado'
 
 
 main()
