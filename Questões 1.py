@@ -56,17 +56,17 @@ def selecao(seq):
 
 
 def bolha(seq):
+    x = len(seq)
+    # verifica se a lista tem tamanho pra fazer a ordenação
+    for final in range(x - 1):
 
-    for final in range(len(seq), 0, -1):
-        exchanging = False
-
-        for current in range(0, final - 1):
+        # inicia do primeiro elemento da lista até o penúltimo
+        for current in range(x - 1):
+            # se o valor que está na posição atual é maior que o seguinte
             if seq[current] > seq[current + 1]:
+                # inverte a posição
                 seq[current + 1], seq[current] = seq[current], seq[current + 1]
-                exchanging = True
 
-        if not exchanging:
-            break
 
 # Ordenação por Intercalação
 
