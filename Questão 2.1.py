@@ -3,7 +3,7 @@ from funcionario.funcionario import Funcionario
 
 def main():
 
-    funcionarios = [nome: Guilherme salario:3.45,
+    funcionarios = [nome:Guilherme salario:3.45
                     nome:Moisés salario:2.49,
                     nome:Rafael salario:3.45,
                     nome:Raimundo salario:4.3,
@@ -17,9 +17,9 @@ def main():
     print(funcionarios)
 
     print(funcionarios_ordenados1=sorted(funcionarios,
-          key=Funcionario.get_salario, reverse=True))
+          key=Funcionario.get_salario))
     print(funcionarios_ordenados2=sorted(
-        funcionarios, key=Funcionario.get_nome, reverse=True))
+        funcionarios, key=Funcionario.get_nome))
 
     print(funcionarios_ordenados3=sorted(funcionarios,
           key=Funcionario.get_salario, reverse=True))
