@@ -9,5 +9,5 @@ class Funcionario(object):
     def get_nome(self):
         return self.nome
 
-    def get_valor(self):
+    def get_salario(self):
         return self.salario
