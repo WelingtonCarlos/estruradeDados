@@ -3,16 +3,16 @@ from funcionario.funcionario import Funcionario
 
 def main():
 
-    [nome:chocolate salario:3.45,
-     nome:biscoito salario:2.49,
-     nome:cafe salario:3.45,
-     nome:suco salario:4.3,
-     nome:feijao salario:10.0,
-     nome:arroz salario:8.5
-     nome:cafe salario:3.45,
-     nome:suco salario:4.3,
-     nome:feijao salario:10.0,
-     nome:arroz salario:8.5]
+    funcionarios = [nome: Guilherme salario:3.45,
+                    nome:Moisés salario:2.49,
+                    nome:Rafael salario:3.45,
+                    nome:Raimundo salario:4.3,
+                    nome:Welington salario:10.0,
+                    nome:Carlos salario:8.5
+                    nome:Andrey salario:3.45,
+                    nome:Gabriel salario:4.3,
+                    nome:Daniel salario:10.0,
+                    nome:João salario:8.5]
 
     print(funcionarios)
 
