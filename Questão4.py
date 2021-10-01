@@ -129,12 +129,12 @@ lista_opcoes = ["\nOpções: ",
                 "2 - Listar Produtos em ordem Alfabética",
                 "3 - Listar Produtos do menor para o maior preço",
                 "4 - Listar Produtos maior para o menor preço",
-                "5 - Listar Produtos por ordem crescente de código"]
+                "5 - Listar Produtos",
+                "6 - Buscar Produto através do código"]
 
 # Criando lista pessoas
 
 # Iniciando interação com o usuário
-print("Sistema de cadastro treinamento")
 nome_usuario = input("\n Ola! Digite seu nome: ")
 
 # Loop para funcionamento do programa
@@ -185,9 +185,18 @@ while True:
         print(produto_ordem_descrescente_preco)
 
     elif opcao_selecionada == 5:
-        produto_ordem_crescente_codigo = sorted(
-            produtos, key=Produto.getCodigo)
-        print(produto_ordem_crescente_codigo)
+        print(codigos)
+        print(descricaos)
+        print(precos, "Reais")
+
+    elif opcao_selecionada == 6:
+        input("Insira o código do produto que deseja buscar: ")
+        quicksort(codigos)
+        buscasequencial((codigos), 10)
+        buscabinaria((codigos), 10)
+        quicksort(descricao)
+        print(buscasequencial(descricao, "Tijolo"))
+        print(buscabinaria(descricao, "Tijolo"))
 
     else:
         print("opção inválida")
