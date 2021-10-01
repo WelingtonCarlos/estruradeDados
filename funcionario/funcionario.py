@@ -1,13 +1,11 @@
 class Funcionario(object):
-    def __init__(self, nome, salario):
+
+    def _init_(self, nome, salario):
         self.nome = nome
         self.salario = salario
 
-    def __repr__(self):
-        return "Nome:%s salário:%s" % (self.nome, self.salario)
-
-    def get_nome(self):
+    def get_nome(self, nome):
         return self.nome
 
-    def get_salario(self):
+    def get_salario(self, salario):
         return self.salario

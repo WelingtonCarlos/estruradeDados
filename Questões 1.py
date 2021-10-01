@@ -4,8 +4,11 @@ def main():
     seq3 = [54, 2, 11, 4, 17, 7, 21, 1, 99, 55, 67, 9, 71, 79, 89]
     seq4 = [721, 345, 901, 101, 21, 67, 7, 9, 4, 79]
     seq5 = [871, 888, 564, 764, 990, 76, 3, 1, 2, 5, 45, 89]
+    seq6 = ["d", "k", "a", "l"]
     listamaluca = [8, "5", 32, 0, "uema", 11]
 
+    quicksort(seq6)
+    print(seq6)
     print(seq1)
     print(seq2)
     print(seq3)
@@ -56,10 +59,12 @@ def insercao(seq):
 def selecao(seq):
     x = len(seq)
     for index in range(x-1):
-        min_index = index  # o menor índice da lista é na posição que o index estiver
+        min_index = index
+        # o menor índice da lista é na posição que o index estiver
 
         for right in range(index, x):
-            if seq[right] < seq[min_index]:  # se o elemento seguinte ao index for menor
+            if seq[right] < seq[min_index]:
+                # se o elemento seguinte ao index for menor
                 # eles invertem de posição
                 seq[right], seq[min_index] = seq[min_index], seq[right]
 
@@ -155,6 +160,7 @@ def partition(seq, start, end):
 def buscasequencial(lista, elem):
     """Retorna o índice elem se ele estiver na lista ou None, caso contrário"""
     for i in range(len(lista)):
+
         if lista[i] == elem:
             return elem
     return "Não encontrado"
@@ -164,7 +170,6 @@ def buscabinaria(seq, elem):
     quicksort(seq)
     start = 0
     end = len(seq)-1
-
     while start <= end:
         middle = (start + end)//2
 
